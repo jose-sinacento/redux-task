@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Task } from "./Task";
 
 export function Tasks() {
   const tasks = useSelector(state => state.tasks);
@@ -9,9 +10,9 @@ export function Tasks() {
 
       <ul>
         {tasks.map(task => (
-          <li key={task.id}>{task.text}</li>
+          <Task key={task.id} task={task} />
         ))}
       </ul>
     </div>
   );
-}
+};
